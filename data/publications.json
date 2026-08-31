@@ -1,0 +1,300 @@
+{
+  "orcid": "0000-0002-5923-4915",
+  "generated": "2026-09-01",
+  "source": "NCBI PubMed E-utilities",
+  "queries": [
+    "0000-0002-5923-4915[auid]",
+    "\"Kim, Yoo Hyung\"[Full Author Name]"
+  ],
+  "count": 32,
+  "publications": [
+    {
+      "pmid": "42458477",
+      "doi": "10.1186/s12943-026-02699-2",
+      "pmc": "PMC13374302",
+      "title": "Mutation-specific dynamics of dedifferentiation trajectories and tumor-stromal interactions in thyroid cancer",
+      "journal": "Mol Cancer",
+      "year": "2026",
+      "authors": "Joo EH, Song YS, Lee HS, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "42219240",
+      "doi": "10.1177/03000605261448320",
+      "pmc": "PMC13226968",
+      "title": "Papillary thyroid carcinoma with coexisting venous hemangioma mimicking locally invasive disease: A case report",
+      "journal": "J Int Med Res",
+      "year": "2026",
+      "authors": "Lim JW, Kim HS, <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "41728981",
+      "doi": "10.1097/JS9.0000000000004979",
+      "pmc": "",
+      "title": "Integrative multi-omics refines the molecular subtypes of thyroid cancers and enhances cancer-progression prediction: a retrospective cohort study",
+      "journal": "Int J Surg",
+      "year": "2026",
+      "authors": "<strong>Kim YH</strong>, Wang J, Won JK, <em>et al.</em>"
+    },
+    {
+      "pmid": "41589080",
+      "doi": "10.3346/jkms.2026.41.e58",
+      "pmc": "PMC12834657",
+      "title": "Shared Decision-Making for Determining Treatment Strategies in Low-Risk Thyroid Cancer: Protocol of a Multicenter Cluster-Randomized Trial (MAeSTro-SDM)",
+      "journal": "J Korean Med Sci",
+      "year": "2026",
+      "authors": "Lee EK, Kim MJ, Hwangbo Y, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "40930058",
+      "doi": "10.2196/71592",
+      "pmc": "PMC12422742",
+      "title": "Biological Age Estimation From the Age Gap Using Deep Learning Integrating Morbidity and Mortality: Model Development and Validation Study",
+      "journal": "J Med Internet Res",
+      "year": "2025",
+      "authors": "Moon SE, Yoon JW, Bae JH, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "40087165",
+      "doi": "10.1007/s00405-025-09281-4",
+      "pmc": "",
+      "title": "Anaplastic and poorly differentiated thyroid carcinomas at intervention sites: implications of track seeding and the importance of follow-up monitoring- report of two cases",
+      "journal": "Eur Arch Otorhinolaryngol",
+      "year": "2025",
+      "authors": "Seok J, <strong>Kim YH</strong>, Won JK, <em>et al.</em>"
+    },
+    {
+      "pmid": "39962344",
+      "doi": "10.3803/EnM.2024.2136",
+      "pmc": "PMC12061745",
+      "title": "Study Protocol of Expanded Multicenter Prospective Cohort Study of Active Surveillance on Papillary Thyroid Microcarcinoma (MAeSTro-EXP)",
+      "journal": "Endocrinol Metab (Seoul)",
+      "year": "2025",
+      "authors": "Moon JH, Lee EK, Cha W, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "39576146",
+      "doi": "10.1111/jdi.14365",
+      "pmc": "PMC11786173",
+      "title": "Artificial intelligence-based body composition analysis using computed tomography images predicts both prevalence and incidence of diabetes mellitus",
+      "journal": "J Diabetes Investig",
+      "year": "2025",
+      "authors": "<strong>Kim YH</strong>, Yoon JW, Lee BH, <em>et al.</em>"
+    },
+    {
+      "pmid": "39397516",
+      "doi": "10.3803/EnM.2024.2034",
+      "pmc": "PMC11525692",
+      "title": "Small Multi-Gene DNA Panel Can Aid in Reducing the Surgical Resection Rate and Predicting the Malignancy Risk of Thyroid Nodules",
+      "journal": "Endocrinol Metab (Seoul)",
+      "year": "2024",
+      "authors": "Oh MY, Choi HM, Jang J, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "38798239",
+      "doi": "10.3803/EnM.2023.1872",
+      "pmc": "PMC11220223",
+      "title": "Diagnostic Accuracy of Preoperative Radiologic Findings in Papillary Thyroid Microcarcinoma: Discrepancies with the Postoperative Pathologic Diagnosis and Implications for Clinical Outcomes",
+      "journal": "Endocrinol Metab (Seoul)",
+      "year": "2024",
+      "authors": "Li Y, Kwon SK, Choi H, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "38171208",
+      "doi": "10.3803/EnM.2023.1792",
+      "pmc": "PMC10901654",
+      "title": "Preoperative Serum Copeptin Can Predict Delayed Hyponatremia after Pituitary Surgery in the Absence of Arginine Vasopressin Deficiency",
+      "journal": "Endocrinol Metab (Seoul)",
+      "year": "2024",
+      "authors": "Kang H, Park SS, <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "38088902",
+      "doi": "10.1158/1078-0432.CCR-23-2025",
+      "pmc": "",
+      "title": "Integrative Multi-omics Analysis Reveals Different Metabolic Phenotypes Based on Molecular Characteristics in Thyroid Cancer",
+      "journal": "Clin Cancer Res",
+      "year": "2024",
+      "authors": "<strong>Kim YH</strong>, Yoon SJ, Kim M, <em>et al.</em>"
+    },
+    {
+      "pmid": "37545523",
+      "doi": "10.3389/fimmu.2023.1187388",
+      "pmc": "PMC10403231",
+      "title": "Modeling the tumor microenvironment of anaplastic thyroid cancer: an orthotopic tumor model in C57BL/6 mice",
+      "journal": "Front Immunol",
+      "year": "2023",
+      "authors": "Xu Z, Shin HS, <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "36322283",
+      "doi": "10.1007/s11102-022-01278-0",
+      "pmc": "",
+      "title": "Serum copeptin levels at day two after pituitary surgery and ratio to baseline predict postoperative central diabetes insipidus",
+      "journal": "Pituitary",
+      "year": "2022",
+      "authors": "Jang HN, Kang H, <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "35687678",
+      "doi": "10.1126/sciadv.abn2611",
+      "pmc": "PMC9187237",
+      "title": "Gatekeeping role of Nf2/Merlin in vascular tip EC induction through suppression of VEGFR2 internalization",
+      "journal": "Sci Adv",
+      "year": "2022",
+      "authors": "Bae JH, Yang MJ, Jeong SH, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "35413780",
+      "doi": "10.3803/EnM.2022.1437",
+      "pmc": "PMC9081301",
+      "title": "Transarterial Radioembolization as an Effective Local Treatment Modality for Liver Metastasis of Thyroid Cancer",
+      "journal": "Endocrinol Metab (Seoul)",
+      "year": "2022",
+      "authors": "<strong>Kim YH</strong>, Kim HC, Lee YB, <em>et al.</em>"
+    },
+    {
+      "pmid": "34650185",
+      "doi": "10.1038/s41598-021-99983-6",
+      "pmc": "PMC8516898",
+      "title": "A beneficial role of computer-aided diagnosis system for less experienced physicians in the diagnosis of thyroid nodule on ultrasound",
+      "journal": "Sci Rep",
+      "year": "2021",
+      "authors": "Kang S, Lee E, Chung CW, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "34446748",
+      "doi": "10.1038/s41598-021-95500-x",
+      "pmc": "PMC8390481",
+      "title": "Changes in copeptin levels before and 3 months after transsphenoidal surgery according to the presence of postoperative central diabetes insipidus",
+      "journal": "Sci Rep",
+      "year": "2021",
+      "authors": "<strong>Kim YH</strong>, Kim YH, Je YS, <em>et al.</em>"
+    },
+    {
+      "pmid": "34122338",
+      "doi": "10.3389/fendo.2021.664839",
+      "pmc": "PMC8187942",
+      "title": "Decreased Expression of Ileal Thyroid Hormone Transporters in a Hypothyroid Patient: A Case Report",
+      "journal": "Front Endocrinol (Lausanne)",
+      "year": "2021",
+      "authors": "Chung CW, Mo EY, Jung GS, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "31981984",
+      "doi": "10.1016/j.ebiom.2020.102633",
+      "pmc": "PMC6992938",
+      "title": "Enhanced thrombospondin-1 causes dysfunction of vascular endothelial cells derived from Fabry disease-induced pluripotent stem cells",
+      "journal": "EBioMedicine",
+      "year": "2020",
+      "authors": "Do HS, Park SW, Im I, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "30783090",
+      "doi": "10.1038/s41467-019-08773-2",
+      "pmc": "PMC6381131",
+      "title": "A MST1-FOXO1 cascade establishes endothelial tip cell polarity and facilitates sprouting angiogenesis",
+      "journal": "Nat Commun",
+      "year": "2019",
+      "authors": "<strong>Kim YH</strong>, Choi J, Yang MJ, <em>et al.</em>"
+    },
+    {
+      "pmid": "30733421",
+      "doi": "10.1126/science.aav0173",
+      "pmc": "",
+      "title": "Tumor metastasis to lymph nodes requires YAP-dependent metabolic adaptation",
+      "journal": "Science",
+      "year": "2019",
+      "authors": "Lee CK, Jeong SH, Jang C, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "30295643",
+      "doi": "10.1172/JCI99659",
+      "pmc": "PMC6205384",
+      "title": "Angiopoietin-2 exacerbates cardiac hypoxia and inflammation after myocardial infarction",
+      "journal": "J Clin Invest",
+      "year": "2018",
+      "authors": "Lee SJ, Lee CK, Kang S, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "28362702",
+      "doi": "10.1097/PAI.0000000000000460",
+      "pmc": "",
+      "title": "The Usefulness of Phospholipase A2 Receptor and IgG4 Detection in Differentiation Primary Membranous Nephropathy From Secondary Membranous Nephropathy in Renal Biopsy",
+      "journal": "Appl Immunohistochem Mol Morphol",
+      "year": "2018",
+      "authors": "Yeo MK, <strong>Kim YH</strong>, Choi DE, <em>et al.</em>"
+    },
+    {
+      "pmid": "28869715",
+      "doi": "10.1111/imj.13614",
+      "pmc": "",
+      "title": "Growth differentiation factor 15 as a predictor of adverse renal outcomes in patients with immunoglobulin A nephropathy",
+      "journal": "Intern Med J",
+      "year": "2017",
+      "authors": "Na KR, <strong>Kim YH</strong>, Chung HK, <em>et al.</em>"
+    },
+    {
+      "pmid": "28805663",
+      "doi": "10.1172/JCI93825",
+      "pmc": "PMC5669570",
+      "title": "YAP/TAZ regulates sprouting angiogenesis and vascular barrier maturation",
+      "journal": "J Clin Invest",
+      "year": "2017",
+      "authors": "Kim J, <strong>Kim YH</strong>, Kim J, <em>et al.</em>"
+    },
+    {
+      "pmid": "27346188",
+      "doi": "10.1111/imj.13168",
+      "pmc": "",
+      "title": "Spinning: an arising cause of rhabdomyolysis in young females",
+      "journal": "Intern Med J",
+      "year": "2016",
+      "authors": "<strong>Kim YH</strong>, Ham YR, Na KR, <em>et al.</em>"
+    },
+    {
+      "pmid": "27222015",
+      "doi": "10.1159/000446250",
+      "pmc": "",
+      "title": "Clinical Characteristics of Overhydration in Patients with Idiopathic Edema",
+      "journal": "Nephron",
+      "year": "2016",
+      "authors": "Ham YR, Kim HR, Jeon HJ, … <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "27074671",
+      "doi": "10.3904/kjim.2014.377",
+      "pmc": "PMC4855096",
+      "title": "Comparison of treatment delay associated with tunneled hemodialysis catheter placement between interventionists",
+      "journal": "Korean J Intern Med",
+      "year": "2016",
+      "authors": "<strong>Kim YH</strong>, Kim HR, Jeon HJ, <em>et al.</em>"
+    },
+    {
+      "pmid": "26779424",
+      "doi": "10.1016/j.krcp.2015.10.006",
+      "pmc": "PMC4688576",
+      "title": "Overhydration measured by bioimpedance analysis and the survival of patients on maintenance hemodialysis: a single-center study",
+      "journal": "Kidney Res Clin Pract",
+      "year": "2015",
+      "authors": "Kim YJ, Jeon HJ, <strong>Kim YH</strong>, <em>et al.</em>"
+    },
+    {
+      "pmid": "26306306",
+      "doi": "10.4068/cmj.2015.51.2.102",
+      "pmc": "PMC4543148",
+      "title": "A Case of Membranous Glomerulonephritis with Superimposed Anti-Neutrophil Cytoplasmic Antibody-Associated Rapidly Progressive Crescentic Glomerulonephritis",
+      "journal": "Chonnam Med J",
+      "year": "2015",
+      "authors": "<strong>Kim YH</strong>, Kim HR, Ham YR, <em>et al.</em>"
+    },
+    {
+      "pmid": "26877926",
+      "doi": "10.1016/j.krcp.2013.07.002",
+      "pmc": "PMC4714101",
+      "title": "Nondiabetic kidney diseases in type 2 diabetic patients",
+      "journal": "Kidney Res Clin Pract",
+      "year": "2013",
+      "authors": "Kim YJ, <strong>Kim YH</strong>, Kim KD, <em>et al.</em>"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+name: Update publications
+
+# 매월 1일 자동 실행 + Actions 탭에서 수동 실행 가능
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch publications from PubMed
+        env:
+          # 선택 사항. 저장소 Settings > Secrets 에 NCBI_API_KEY 를 넣으면
+          # NCBI 속도 제한이 초당 3회에서 10회로 완화됩니다. 없어도 동작합니다.
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: |
+          python3 scripts/fetch_publications.py | tee /tmp/pubs.log
+          {
+            echo "### 논문 목록 갱신 결과"
+            echo '```'
+            cat /tmp/pubs.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain data/publications.json data/candidates.json index.html)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/publications.json data/candidates.json index.html 2>/dev/null || git add data/publications.json index.html
+            git commit -m "chore(pubs): update publications from PubMed"
+            git push
+            echo "갱신 내용을 커밋했습니다." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "변경 없음 — 커밋하지 않았습니다." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Flag newly discovered papers
+        run: |
+          if grep -q "자동 편입" /tmp/pubs.log; then
+            echo "::notice::새 논문이 소속 확인을 거쳐 자동 편입되었습니다. data/pmids.txt 에 고정하려면 --accept 를 실행하세요."
+          fi
+          if grep -q "검토 필요" /tmp/pubs.log; then
+            echo "::warning::소속을 확인하지 못한 후보가 있습니다. data/candidates.json 을 확인하고 --accept 또는 --reject 로 처리하세요."
+          fi
+          if grep -q "저자 강조 실패" /tmp/pubs.log; then
+            echo "::warning::PubMed 저자 색인 문제로 저자 강조에 실패한 논문이 있습니다."
+          fi

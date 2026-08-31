@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRISM Group · LTIMS · Seoul National University Hospital</title>
+  <meta name="description" content="PRISM Group — Plasticity, RNA, Identity, Single-cell and Modulation. A research group led by Yoo Hyung Kim within the Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS), Division of Endocrinology and Metabolism, Seoul National University Hospital." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=417d2a30" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ ICON SPRITE ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-envelope" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.01L12 12l8-5.99V6H4Zm16 2.24-8 5.99-8-5.99V18h16V8.24Z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
+    <symbol id="i-orcid" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.2 6.8a.98.98 0 1 1 0 1.96.98.98 0 0 1 0-1.96Zm-.73 3.2h1.46v7.2H7.47V10Zm3.3 0h3.02c2.88 0 4.14 2.06 4.14 3.6 0 1.67-1.31 3.6-4.1 3.6h-3.06V10Zm1.46 1.32v4.56h1.46c2.08 0 2.56-1.58 2.56-2.28 0-1.14-.73-2.28-2.61-2.28h-1.41Z"/></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm-7 9.19v3.2C5 17.39 8.13 19 12 19s7-1.61 7-3.61v-3.2l-7 3.82-7-3.82Z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12h8v1.8H8V12Zm0 3.5h8v1.8H8v-1.8Z"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path fill="currentColor" d="M7 7h5v6a4 4 0 0 1-4 4H7v-2h1a2 2 0 0 0 2-2v-.5H7V7Zm7 0h5v6a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2v-.5h-3V7Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11h12.17l-5.58-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4v-2Z"/></symbol>
+    <symbol id="i-dna" viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h2c0 1.4.5 2.5 1.4 3.4C11.7 6.8 14 8.3 14 12s-2.3 5.2-3.6 6.6C9.5 19.5 9 20.6 9 22H7c0-2 .8-3.6 2-4.8H15v2h-2.6c-.3.3-.6.5-.9.8H15v-2H9.8c1-1 1.9-2.3 2.1-4H15v-2h-3.1c-.2-1.7-1.1-3-2.1-4H15V4H9.4c.3.3.6.5.9.8H7V2Zm10 0h-2c0 1.4-.5 2.5-1.4 3.4L15 7.2c1.2-1.3 2-2.9 2-5.2Zm0 20h-2c0-2.3-.8-3.9-2-5.2l1.6 1.8c.9.9 1.4 2 1.4 3.4Z"/></symbol>
+    <symbol id="i-microscope" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3h4l-1 2 3 6-2 1-3-6-1 2H7l2-5Zm-3 14h9a5 5 0 0 0 4-8l-1.7 1a3 3 0 0 1-2.3 5H8v-2H6v2H4v2h2v-2Zm-2 3h16v2H4v-2Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm1-13h-2v6l5 3 1-1.7-4-2.3V7Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm0 2v14h12V4H6Zm2 2h8v2H8V6Zm0 4h8v2H8v-2Z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path fill="currentColor" d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-3.3 0-6 1.8-6 4v3h12v-3c0-2.2-2.7-4-6-4Zm8-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 2c-.6 0-1.2.1-1.7.3 1.6.9 2.7 2.2 2.7 3.7v3h4v-3c0-2.2-2.7-4-5-4Z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path fill="currentColor" d="M5 3h2v18H5V3Zm3 1h11l-2 4 2 4H8V4Z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3h6l1.5 2H20a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3.5L9 3Zm3 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></symbol>
+  </svg>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">
+        <span class="nav__logo-dot"></span>
+        <span class="nav__logo-mark">PRISM</span>
+        <span class="nav__logo-word" data-en="Group" data-ko="Group">Group</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#research" data-en="Research" data-ko="연구">Research</a>
+        <a href="#news" data-en="News" data-ko="소식">News</a>
+        <a href="#publications" data-en="Publications" data-ko="논문">Publications</a>
+        <a href="#team" data-en="Team" data-ko="구성원">Team</a>
+        <a href="#column" data-en="Column" data-ko="칼럼">Column</a>
+        <a href="#photos" data-en="Photos" data-ko="사진">Photos</a>
+        <a href="#join" data-en="Join" data-ko="합류">Join</a>
+        <button class="lang-switch" id="langSwitch" aria-label="Language">
+          <span class="lang-switch__opt" data-lang="en">EN</span>
+          <span class="lang-switch__sep">/</span>
+          <span class="lang-switch__opt" data-lang="ko">한</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO BANNER ============ -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow" data-en="Within LTIMS · Laboratory of Thyroid ImmunoMetabolism in SNUH"
+         data-ko="서울대학교병원 LTIMS 소속 연구그룹">Within LTIMS · Laboratory of Thyroid ImmunoMetabolism in SNUH</p>
+      <h1 class="hero__title">PRISM Group</h1>
+      <p class="hero__tagline"
+         data-en="Plasticity · RNA · Identity · Single-cell · Modulation"
+         data-ko="Plasticity · RNA · Identity · Single-cell · Modulation">
+         Plasticity · RNA · Identity · Single-cell · Modulation</p>
+      <p class="hero__lead"
+         data-en="We study how cells acquire, maintain, and lose their identity — across tissues and in disease — and build nanobodies to read and reach the identities we find."
+         data-ko="세포가 정체성을 어떻게 얻고, 지키고, 잃는지를 조직과 질환에서 연구하고, 그 정체성을 읽고 표적할 나노바디를 개발합니다.">
+         We study how cells acquire, maintain, and lose their identity — across tissues and in disease — and build nanobodies to read and reach the identities we find.</p>
+      <div class="hero__cta">
+        <a href="#research" class="btn btn--solid"><svg class="ic"><use href="#i-microscope"/></svg><span data-en="Explore research" data-ko="연구 보기">Explore research</span></a>
+        <a href="#join" class="btn btn--light"><svg class="ic"><use href="#i-users"/></svg><span data-en="Join the lab" data-ko="함께하기">Join the lab</span></a>
+        <a href="mailto:yoohyungk@gmail.com" class="btn btn--light"><svg class="ic"><use href="#i-envelope"/></svg><span data-en="Contact" data-ko="연락">Contact</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH ============ -->
+  <section class="section" id="research">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-dna"/></svg>
+      <h2 class="shead__title" data-en="Research" data-ko="연구">Research</h2>
+      <p class="shead__sub"
+         data-en="Four connected threads, from basic cell biology to translational tools."
+         data-ko="기초 세포생물학에서 중개 도구까지, 네 갈래의 연결된 연구.">
+         Four connected threads, from basic cell biology to translational tools.</p>
+    </div>
+
+    <div class="grid grid--research">
+      <article class="rcard">
+        <div class="rcard__icon"><svg class="ic"><use href="#i-microscope"/></svg></div>
+        <h3 class="rcard__title" data-en="Cell Heterogeneity" data-ko="세포이질성">Cell Heterogeneity</h3>
+        <p class="rcard__body"
+           data-en="Single-cell and spatial atlases across organs — mapping the identities that make each cell population distinct."
+           data-ko="장기별 단일세포·공간 지도 구축 — 각 세포 집단을 고유하게 만드는 정체성을 규명합니다.">
+           Single-cell and spatial atlases across organs — mapping the identities that make each cell population distinct.</p>
+        <div class="tags">
+          <span class="tag">scRNA-seq</span><span class="tag">spatial</span><span class="tag">atlas</span>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__icon"><svg class="ic"><use href="#i-clock"/></svg></div>
+        <h3 class="rcard__title" data-en="Cell Senescence" data-ko="세포노화">Cell Senescence</h3>
+        <p class="rcard__body"
+           data-en="How cells become senescent, and how metabolic disease accelerates it — toward interventions that keep tissues young."
+           data-ko="세포가 어떻게 노화하는지, 대사질환이 이를 어떻게 가속하는지 연구하여 조직을 젊게 유지하는 개입법을 모색합니다.">
+           How cells become senescent, and how metabolic disease accelerates it — toward interventions that keep tissues young.</p>
+        <div class="tags">
+          <span class="tag">senescence</span><span class="tag">metabolism</span><span class="tag">aging</span>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__icon"><svg class="ic"><use href="#i-dna"/></svg></div>
+        <h3 class="rcard__title" data-en="Non-coding RNA" data-ko="ncRNA">Non-coding RNA</h3>
+        <p class="rcard__body"
+           data-en="Long non-coding and microRNA circuits that drive tumor angiogenesis and progression — and how to intercept them."
+           data-ko="종양 혈관신생과 진행을 유도하는 lncRNA·miRNA 조절 회로를 규명하고 이를 차단하는 방법을 찾습니다.">
+           Long non-coding and microRNA circuits that drive tumor angiogenesis and progression — and how to intercept them.</p>
+        <div class="tags">
+          <span class="tag">lncRNA</span><span class="tag">miRNA</span><span class="tag">angiogenesis</span>
+        </div>
+      </article>
+
+      <article class="rcard">
+        <div class="rcard__icon"><svg class="ic"><use href="#i-flag"/></svg></div>
+        <h3 class="rcard__title" data-en="Nanobody Engineering" data-ko="나노바디 공학">Nanobody Engineering</h3>
+        <p class="rcard__body"
+           data-en="Producing and engineering single-domain antibodies (nanobodies) as precise tools to probe and target cell identity."
+           data-ko="세포 정체성을 탐구하고 표적화하기 위한 정밀 도구로서 단일 도메인 항체(나노바디)를 생산·개량합니다.">
+           Producing and engineering single-domain antibodies (nanobodies) as precise tools to probe and target cell identity.</p>
+        <div class="tags">
+          <span class="tag">VHH</span><span class="tag">protein</span><span class="tag">targeting</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ NEWS ============ -->
+  <section class="section section--tint" id="news">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-clock"/></svg>
+      <h2 class="shead__title" data-en="News" data-ko="소식">News</h2>
+    </div>
+
+    <ul class="news" id="newsList">
+      <!-- 소식을 추가하려면 이 블록을 복사해 맨 위에 붙여넣으세요. 최신 소식이 위로 갑니다.
+           <li class="news__item">
+             <time class="news__badge">2026 · 09</time>
+             <p class="news__text">소식 내용.</p>
+           </li>
+      -->
+
+      <li class="empty-note" id="newsEmpty"
+          data-en="No news yet." data-ko="아직 등록된 소식이 없습니다.">No news yet.</li>
+    </ul>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="section" id="publications">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-book"/></svg>
+      <h2 class="shead__title" data-en="Publications" data-ko="논문">Publications</h2>
+      <!-- PUBCOUNT:START -->
+         <p class="shead__sub"
+            data-en="32 peer-reviewed papers · PubMed, auto-updated monthly"
+            data-ko="동료심사 논문 32편 · PubMed 기준, 매월 자동 갱신">
+            32 peer-reviewed papers · PubMed, auto-updated monthly</p>
+<!-- PUBCOUNT:END -->
+    </div>
+
+    <!-- PUBLICATIONS:START -->
+    <div class="pubs" id="pubsList">
+      <article class="pcard">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2026</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Mutation-specific dynamics of dedifferentiation trajectories and tumor-stromal interactions in thyroid cancer" data-ko="Mutation-specific dynamics of dedifferentiation trajectories and tumor-stromal interactions in thyroid cancer">Mutation-specific dynamics of dedifferentiation trajectories and tumor-stromal interactions in thyroid cancer</h3>
+          <p class="pcard__authors">Joo EH, Song YS, Lee HS, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Mol Cancer</span><span class="tag">2026</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/42458477/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1186/s12943-026-02699-2" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13374302/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2026</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Papillary thyroid carcinoma with coexisting venous hemangioma mimicking locally invasive disease: A case report" data-ko="Papillary thyroid carcinoma with coexisting venous hemangioma mimicking locally invasive disease: A case report">Papillary thyroid carcinoma with coexisting venous hemangioma mimicking locally invasive disease: A case report</h3>
+          <p class="pcard__authors">Lim JW, Kim HS, <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">J Int Med Res</span><span class="tag">2026</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/42219240/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1177/03000605261448320" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13226968/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2026</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Integrative multi-omics refines the molecular subtypes of thyroid cancers and enhances cancer-progression prediction: a retrospective cohort study" data-ko="Integrative multi-omics refines the molecular subtypes of thyroid cancers and enhances cancer-progression prediction: a retrospective cohort study">Integrative multi-omics refines the molecular subtypes of thyroid cancers and enhances cancer-progression prediction: a retrospective cohort study</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Wang J, Won JK, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Int J Surg</span><span class="tag">2026</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/41728981/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1097/JS9.0000000000004979" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2026</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Shared Decision-Making for Determining Treatment Strategies in Low-Risk Thyroid Cancer: Protocol of a Multicenter Cluster-Randomized Trial (MAeSTro-SDM)" data-ko="Shared Decision-Making for Determining Treatment Strategies in Low-Risk Thyroid Cancer: Protocol of a Multicenter Cluster-Randomized Trial (MAeSTro-SDM)">Shared Decision-Making for Determining Treatment Strategies in Low-Risk Thyroid Cancer: Protocol of a Multicenter Cluster-Randomized Trial (MAeSTro-SDM)</h3>
+          <p class="pcard__authors">Lee EK, Kim MJ, Hwangbo Y, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">J Korean Med Sci</span><span class="tag">2026</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/41589080/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3346/jkms.2026.41.e58" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12834657/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2025</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Biological Age Estimation From the Age Gap Using Deep Learning Integrating Morbidity and Mortality: Model Development and Validation Study" data-ko="Biological Age Estimation From the Age Gap Using Deep Learning Integrating Morbidity and Mortality: Model Development and Validation Study">Biological Age Estimation From the Age Gap Using Deep Learning Integrating Morbidity and Mortality: Model Development and Validation Study</h3>
+          <p class="pcard__authors">Moon SE, Yoon JW, Bae JH, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">J Med Internet Res</span><span class="tag">2025</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/40930058/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.2196/71592" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12422742/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2025</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Anaplastic and poorly differentiated thyroid carcinomas at intervention sites: implications of track seeding and the importance of follow-up monitoring- report of two cases" data-ko="Anaplastic and poorly differentiated thyroid carcinomas at intervention sites: implications of track seeding and the importance of follow-up monitoring- report of two cases">Anaplastic and poorly differentiated thyroid carcinomas at intervention sites: implications of track seeding and the importance of follow-up monitoring- report of two cases</h3>
+          <p class="pcard__authors">Seok J, <strong>Kim YH</strong>, Won JK, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Eur Arch Otorhinolaryngol</span><span class="tag">2025</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/40087165/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1007/s00405-025-09281-4" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2025</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Study Protocol of Expanded Multicenter Prospective Cohort Study of Active Surveillance on Papillary Thyroid Microcarcinoma (MAeSTro-EXP)" data-ko="Study Protocol of Expanded Multicenter Prospective Cohort Study of Active Surveillance on Papillary Thyroid Microcarcinoma (MAeSTro-EXP)">Study Protocol of Expanded Multicenter Prospective Cohort Study of Active Surveillance on Papillary Thyroid Microcarcinoma (MAeSTro-EXP)</h3>
+          <p class="pcard__authors">Moon JH, Lee EK, Cha W, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Endocrinol Metab (Seoul)</span><span class="tag">2025</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/39962344/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3803/EnM.2024.2136" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12061745/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2025</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Artificial intelligence-based body composition analysis using computed tomography images predicts both prevalence and incidence of diabetes mellitus" data-ko="Artificial intelligence-based body composition analysis using computed tomography images predicts both prevalence and incidence of diabetes mellitus">Artificial intelligence-based body composition analysis using computed tomography images predicts both prevalence and incidence of diabetes mellitus</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Yoon JW, Lee BH, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">J Diabetes Investig</span><span class="tag">2025</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/39576146/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1111/jdi.14365" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11786173/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2024</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Small Multi-Gene DNA Panel Can Aid in Reducing the Surgical Resection Rate and Predicting the Malignancy Risk of Thyroid Nodules" data-ko="Small Multi-Gene DNA Panel Can Aid in Reducing the Surgical Resection Rate and Predicting the Malignancy Risk of Thyroid Nodules">Small Multi-Gene DNA Panel Can Aid in Reducing the Surgical Resection Rate and Predicting the Malignancy Risk of Thyroid Nodules</h3>
+          <p class="pcard__authors">Oh MY, Choi HM, Jang J, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Endocrinol Metab (Seoul)</span><span class="tag">2024</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/39397516/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3803/EnM.2024.2034" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11525692/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2024</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Diagnostic Accuracy of Preoperative Radiologic Findings in Papillary Thyroid Microcarcinoma: Discrepancies with the Postoperative Pathologic Diagnosis and Implications for Clinical Outcomes" data-ko="Diagnostic Accuracy of Preoperative Radiologic Findings in Papillary Thyroid Microcarcinoma: Discrepancies with the Postoperative Pathologic Diagnosis and Implications for Clinical Outcomes">Diagnostic Accuracy of Preoperative Radiologic Findings in Papillary Thyroid Microcarcinoma: Discrepancies with the Postoperative Pathologic Diagnosis and Implications for Clinical Outcomes</h3>
+          <p class="pcard__authors">Li Y, Kwon SK, Choi H, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Endocrinol Metab (Seoul)</span><span class="tag">2024</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/38798239/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3803/EnM.2023.1872" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11220223/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2024</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Preoperative Serum Copeptin Can Predict Delayed Hyponatremia after Pituitary Surgery in the Absence of Arginine Vasopressin Deficiency" data-ko="Preoperative Serum Copeptin Can Predict Delayed Hyponatremia after Pituitary Surgery in the Absence of Arginine Vasopressin Deficiency">Preoperative Serum Copeptin Can Predict Delayed Hyponatremia after Pituitary Surgery in the Absence of Arginine Vasopressin Deficiency</h3>
+          <p class="pcard__authors">Kang H, Park SS, <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Endocrinol Metab (Seoul)</span><span class="tag">2024</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/38171208/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3803/EnM.2023.1792" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10901654/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2024</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Integrative Multi-omics Analysis Reveals Different Metabolic Phenotypes Based on Molecular Characteristics in Thyroid Cancer" data-ko="Integrative Multi-omics Analysis Reveals Different Metabolic Phenotypes Based on Molecular Characteristics in Thyroid Cancer">Integrative Multi-omics Analysis Reveals Different Metabolic Phenotypes Based on Molecular Characteristics in Thyroid Cancer</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Yoon SJ, Kim M, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Clin Cancer Res</span><span class="tag">2024</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/38088902/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1158/1078-0432.CCR-23-2025" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2023</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Modeling the tumor microenvironment of anaplastic thyroid cancer: an orthotopic tumor model in C57BL/6 mice" data-ko="Modeling the tumor microenvironment of anaplastic thyroid cancer: an orthotopic tumor model in C57BL/6 mice">Modeling the tumor microenvironment of anaplastic thyroid cancer: an orthotopic tumor model in C57BL/6 mice</h3>
+          <p class="pcard__authors">Xu Z, Shin HS, <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Front Immunol</span><span class="tag">2023</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/37545523/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3389/fimmu.2023.1187388" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10403231/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2022</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Serum copeptin levels at day two after pituitary surgery and ratio to baseline predict postoperative central diabetes insipidus" data-ko="Serum copeptin levels at day two after pituitary surgery and ratio to baseline predict postoperative central diabetes insipidus">Serum copeptin levels at day two after pituitary surgery and ratio to baseline predict postoperative central diabetes insipidus</h3>
+          <p class="pcard__authors">Jang HN, Kang H, <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Pituitary</span><span class="tag">2022</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/36322283/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1007/s11102-022-01278-0" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2022</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Gatekeeping role of Nf2/Merlin in vascular tip EC induction through suppression of VEGFR2 internalization" data-ko="Gatekeeping role of Nf2/Merlin in vascular tip EC induction through suppression of VEGFR2 internalization">Gatekeeping role of Nf2/Merlin in vascular tip EC induction through suppression of VEGFR2 internalization</h3>
+          <p class="pcard__authors">Bae JH, Yang MJ, Jeong SH, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Sci Adv</span><span class="tag">2022</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/35687678/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1126/sciadv.abn2611" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9187237/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2022</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Transarterial Radioembolization as an Effective Local Treatment Modality for Liver Metastasis of Thyroid Cancer" data-ko="Transarterial Radioembolization as an Effective Local Treatment Modality for Liver Metastasis of Thyroid Cancer">Transarterial Radioembolization as an Effective Local Treatment Modality for Liver Metastasis of Thyroid Cancer</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Kim HC, Lee YB, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Endocrinol Metab (Seoul)</span><span class="tag">2022</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/35413780/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3803/EnM.2022.1437" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9081301/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2021</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="A beneficial role of computer-aided diagnosis system for less experienced physicians in the diagnosis of thyroid nodule on ultrasound" data-ko="A beneficial role of computer-aided diagnosis system for less experienced physicians in the diagnosis of thyroid nodule on ultrasound">A beneficial role of computer-aided diagnosis system for less experienced physicians in the diagnosis of thyroid nodule on ultrasound</h3>
+          <p class="pcard__authors">Kang S, Lee E, Chung CW, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Sci Rep</span><span class="tag">2021</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/34650185/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1038/s41598-021-99983-6" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8516898/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2021</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Changes in copeptin levels before and 3 months after transsphenoidal surgery according to the presence of postoperative central diabetes insipidus" data-ko="Changes in copeptin levels before and 3 months after transsphenoidal surgery according to the presence of postoperative central diabetes insipidus">Changes in copeptin levels before and 3 months after transsphenoidal surgery according to the presence of postoperative central diabetes insipidus</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Kim YH, Je YS, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Sci Rep</span><span class="tag">2021</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/34446748/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1038/s41598-021-95500-x" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8390481/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2021</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Decreased Expression of Ileal Thyroid Hormone Transporters in a Hypothyroid Patient: A Case Report" data-ko="Decreased Expression of Ileal Thyroid Hormone Transporters in a Hypothyroid Patient: A Case Report">Decreased Expression of Ileal Thyroid Hormone Transporters in a Hypothyroid Patient: A Case Report</h3>
+          <p class="pcard__authors">Chung CW, Mo EY, Jung GS, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Front Endocrinol (Lausanne)</span><span class="tag">2021</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/34122338/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3389/fendo.2021.664839" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8187942/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2020</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Enhanced thrombospondin-1 causes dysfunction of vascular endothelial cells derived from Fabry disease-induced pluripotent stem cells" data-ko="Enhanced thrombospondin-1 causes dysfunction of vascular endothelial cells derived from Fabry disease-induced pluripotent stem cells">Enhanced thrombospondin-1 causes dysfunction of vascular endothelial cells derived from Fabry disease-induced pluripotent stem cells</h3>
+          <p class="pcard__authors">Do HS, Park SW, Im I, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">EBioMedicine</span><span class="tag">2020</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/31981984/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1016/j.ebiom.2020.102633" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6992938/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2019</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="A MST1-FOXO1 cascade establishes endothelial tip cell polarity and facilitates sprouting angiogenesis" data-ko="A MST1-FOXO1 cascade establishes endothelial tip cell polarity and facilitates sprouting angiogenesis">A MST1-FOXO1 cascade establishes endothelial tip cell polarity and facilitates sprouting angiogenesis</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Choi J, Yang MJ, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Nat Commun</span><span class="tag">2019</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/30783090/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1038/s41467-019-08773-2" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6381131/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2019</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Tumor metastasis to lymph nodes requires YAP-dependent metabolic adaptation" data-ko="Tumor metastasis to lymph nodes requires YAP-dependent metabolic adaptation">Tumor metastasis to lymph nodes requires YAP-dependent metabolic adaptation</h3>
+          <p class="pcard__authors">Lee CK, Jeong SH, Jang C, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Science</span><span class="tag">2019</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/30733421/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1126/science.aav0173" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2018</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Angiopoietin-2 exacerbates cardiac hypoxia and inflammation after myocardial infarction" data-ko="Angiopoietin-2 exacerbates cardiac hypoxia and inflammation after myocardial infarction">Angiopoietin-2 exacerbates cardiac hypoxia and inflammation after myocardial infarction</h3>
+          <p class="pcard__authors">Lee SJ, Lee CK, Kang S, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">J Clin Invest</span><span class="tag">2018</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/30295643/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1172/JCI99659" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6205384/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2018</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="The Usefulness of Phospholipase A2 Receptor and IgG4 Detection in Differentiation Primary Membranous Nephropathy From Secondary Membranous Nephropathy in Renal Biopsy" data-ko="The Usefulness of Phospholipase A2 Receptor and IgG4 Detection in Differentiation Primary Membranous Nephropathy From Secondary Membranous Nephropathy in Renal Biopsy">The Usefulness of Phospholipase A2 Receptor and IgG4 Detection in Differentiation Primary Membranous Nephropathy From Secondary Membranous Nephropathy in Renal Biopsy</h3>
+          <p class="pcard__authors">Yeo MK, <strong>Kim YH</strong>, Choi DE, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Appl Immunohistochem Mol Morphol</span><span class="tag">2018</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/28362702/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1097/PAI.0000000000000460" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2017</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Growth differentiation factor 15 as a predictor of adverse renal outcomes in patients with immunoglobulin A nephropathy" data-ko="Growth differentiation factor 15 as a predictor of adverse renal outcomes in patients with immunoglobulin A nephropathy">Growth differentiation factor 15 as a predictor of adverse renal outcomes in patients with immunoglobulin A nephropathy</h3>
+          <p class="pcard__authors">Na KR, <strong>Kim YH</strong>, Chung HK, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Intern Med J</span><span class="tag">2017</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/28869715/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1111/imj.13614" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2017</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="YAP/TAZ regulates sprouting angiogenesis and vascular barrier maturation" data-ko="YAP/TAZ regulates sprouting angiogenesis and vascular barrier maturation">YAP/TAZ regulates sprouting angiogenesis and vascular barrier maturation</h3>
+          <p class="pcard__authors">Kim J, <strong>Kim YH</strong>, Kim J, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">J Clin Invest</span><span class="tag">2017</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/28805663/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1172/JCI93825" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5669570/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2016</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Spinning: an arising cause of rhabdomyolysis in young females" data-ko="Spinning: an arising cause of rhabdomyolysis in young females">Spinning: an arising cause of rhabdomyolysis in young females</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Ham YR, Na KR, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Intern Med J</span><span class="tag">2016</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/27346188/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1111/imj.13168" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2016</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Clinical Characteristics of Overhydration in Patients with Idiopathic Edema" data-ko="Clinical Characteristics of Overhydration in Patients with Idiopathic Edema">Clinical Characteristics of Overhydration in Patients with Idiopathic Edema</h3>
+          <p class="pcard__authors">Ham YR, Kim HR, Jeon HJ, … <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Nephron</span><span class="tag">2016</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/27222015/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1159/000446250" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#33305e;--h2:#6d5cf0">2016</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Comparison of treatment delay associated with tunneled hemodialysis catheter placement between interventionists" data-ko="Comparison of treatment delay associated with tunneled hemodialysis catheter placement between interventionists">Comparison of treatment delay associated with tunneled hemodialysis catheter placement between interventionists</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Kim HR, Jeon HJ, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Korean J Intern Med</span><span class="tag">2016</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/27074671/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.3904/kjim.2014.377" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4855096/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#232a3d;--h2:#5f7fd8">2015</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Overhydration measured by bioimpedance analysis and the survival of patients on maintenance hemodialysis: a single-center study" data-ko="Overhydration measured by bioimpedance analysis and the survival of patients on maintenance hemodialysis: a single-center study">Overhydration measured by bioimpedance analysis and the survival of patients on maintenance hemodialysis: a single-center study</h3>
+          <p class="pcard__authors">Kim YJ, Jeon HJ, <strong>Kim YH</strong>, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Kidney Res Clin Pract</span><span class="tag">2015</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/26779424/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1016/j.krcp.2015.10.006" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4688576/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#1f5560;--h2:#3fb8b0">2015</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="A Case of Membranous Glomerulonephritis with Superimposed Anti-Neutrophil Cytoplasmic Antibody-Associated Rapidly Progressive Crescentic Glomerulonephritis" data-ko="A Case of Membranous Glomerulonephritis with Superimposed Anti-Neutrophil Cytoplasmic Antibody-Associated Rapidly Progressive Crescentic Glomerulonephritis">A Case of Membranous Glomerulonephritis with Superimposed Anti-Neutrophil Cytoplasmic Antibody-Associated Rapidly Progressive Crescentic Glomerulonephritis</h3>
+          <p class="pcard__authors"><strong>Kim YH</strong>, Kim HR, Ham YR, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Chonnam Med J</span><span class="tag">2015</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/26306306/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.4068/cmj.2015.51.2.102" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4543148/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+      <article class="pcard pcard--extra">
+        <div class="pcard__thumb" style="--h1:#14161c;--h2:#453a9c">2013</div>
+        <div class="pcard__body">
+          <h3 class="pcard__title" data-en="Nondiabetic kidney diseases in type 2 diabetic patients" data-ko="Nondiabetic kidney diseases in type 2 diabetic patients">Nondiabetic kidney diseases in type 2 diabetic patients</h3>
+          <p class="pcard__authors">Kim YJ, <strong>Kim YH</strong>, Kim KD, <em>et al.</em></p>
+          <p class="pcard__venue"><span class="tag tag--journal">Kidney Res Clin Pract</span><span class="tag">2013</span></p>
+          <div class="pcard__actions">
+            <a class="pill" href="https://pubmed.ncbi.nlm.nih.gov/26877926/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>PubMed</a>
+            <a class="pill" href="https://doi.org/10.1016/j.krcp.2013.07.002" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+            <a class="pill" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4714101/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-quote"/></svg>Full text</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <button class="list-toggle" id="pubsToggle" type="button" aria-expanded="false">
+      <span class="list-toggle__more" data-en="Show 27 more papers" data-ko="논문 27편 더 보기">Show 27 more papers</span>
+      <span class="list-toggle__less" data-en="Show fewer" data-ko="접기">Show fewer</span>
+    </button>
+<!-- PUBLICATIONS:END -->
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section class="section section--tint" id="team">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-users"/></svg>
+      <h2 class="shead__title" data-en="Team" data-ko="구성원">Team</h2>
+    </div>
+
+    <!-- PI -->
+    <article class="pi">
+      <div class="pi__portrait" aria-hidden="true"></div>
+      <div class="pi__body">
+        <h3 class="pi__name" data-en="Yoo-Hyung Kim, M.D., Ph.D." data-ko="김유형 (M.D., Ph.D.)">Yoo-Hyung Kim, M.D., Ph.D.</h3>
+        <div class="tags">
+          <span class="tag tag--role" data-en="Principal Investigator" data-ko="연구책임자">Principal Investigator</span>
+          <span class="tag" data-en="Professor" data-ko="교수">Professor</span>
+        </div>
+        <p class="pi__bio"
+           data-en="Physician-scientist bridging clinical endocrinology and cell biology, focused on cell heterogeneity, senescence, and RNA-guided therapeutics at Seoul National University Hospital."
+           data-ko="임상 내분비학과 세포생물학을 잇는 의사과학자로, 서울대학교병원에서 세포 이질성·세포 노화·RNA 기반 치료를 연구합니다.">
+           Physician-scientist bridging clinical endocrinology and cell biology, focused on cell heterogeneity, senescence, and RNA-guided therapeutics at Seoul National University Hospital.</p>
+        <div class="socials">
+          <a class="soc" href="mailto:yoohyungk@gmail.com" aria-label="Email"><svg class="ic"><use href="#i-envelope"/></svg></a>
+          <a class="soc" href="https://orcid.org/0000-0002-5923-4915" target="_blank" rel="noopener" aria-label="ORCID"><svg class="ic"><use href="#i-orcid"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 구성원을 추가하려면 아래 주석을 풀고 grid 안에 mcard 블록을 넣으세요.
+         공개 동의를 받은 분만 올려 주세요.
+
+    <div class="grid grid--team">
+      <article class="mcard">
+        <div class="mcard__portrait" aria-hidden="true"></div>
+        <h4 class="mcard__name">홍길동</h4>
+        <span class="tag tag--role">대학원생</span>
+        <span class="tag">연구 주제</span>
+        <div class="socials socials--sm">
+          <a class="soc" href="mailto:주소" aria-label="Email"><svg class="ic"><use href="#i-envelope"/></svg></a>
+        </div>
+      </article>
+    </div>
+    -->
+  </section>
+
+  <!-- ============ COLUMN ============ -->
+  <!--
+       글을 추가하려면 아래 article 블록을 통째로 복사해서
+       "여기부터 글 목록" 바로 아래(=맨 위)에 붙여넣고 내용만 바꾸세요. 최신 글이 위로 갑니다.
+
+       <article class="col">
+         <time class="col__date">2026 · 09</time>
+         <h3 class="col__title">제목</h3>
+         <p>첫 문단.</p>
+         <p>둘째 문단.</p>
+       </article>
+
+       · 문단마다 <p>…</p> 로 감싸면 됩니다.
+       · 이 섹션의 글은 data-en / data-ko 없이 써도 됩니다.
+         두 속성이 없으면 언어를 바꿔도 쓴 그대로 보입니다.
+         영문·한글을 따로 두고 싶을 때만 data-en="…" data-ko="…" 를 추가하세요.
+  -->
+  <section class="section" id="column">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-quote"/></svg>
+      <h2 class="shead__title" data-en="Column" data-ko="칼럼">Column</h2>
+      <p class="shead__sub" data-en="Notes and thoughts from the PI."
+         data-ko="연구책임자가 쓰는 글.">Notes and thoughts from the PI.</p>
+    </div>
+
+    <div class="cols">
+      <!-- 여기부터 글 목록 -->
+
+      <article class="col">
+        <time class="col__date">2026 · 08</time>
+        <h3 class="col__title">첫 번째 글 제목을 여기에 씁니다</h3>
+        <p>본문 첫 문단입니다. 이 블록을 지우고 하고 싶은 말씀을 쓰시면 됩니다.
+           문단은 이렇게 &lt;p&gt; 태그 하나에 하나씩 넣습니다.</p>
+        <p>두 번째 문단입니다. 길이 제한은 없고, 글이 쌓이면 최신 글을 맨 위에 두시면 됩니다.</p>
+      </article>
+
+      <!-- 여기까지 글 목록 -->
+    </div>
+  </section>
+
+  <!-- ============ PHOTOS ============ -->
+  <!--
+       사진을 추가하는 방법
+       1. 사진 파일을 assets/ 폴더에 올립니다.  예) assets/2026-09-workshop.jpg
+       2. 아래 figure 블록을 복사해 "여기부터 사진 목록" 아래에 붙여넣습니다.
+       3. 사진이 하나라도 있으면 "아직 등록된 사진이 없습니다" 안내는 자동으로 사라집니다.
+
+       <figure class="photo">
+         <img src="assets/2026-09-workshop.jpg" alt="2026 연구실 워크숍" loading="lazy">
+         <figcaption>2026 연구실 워크숍</figcaption>
+       </figure>
+
+       · alt 에는 사진 설명을 넣어 주세요. 화면에는 안 보이지만 접근성과 검색에 쓰입니다.
+       · 사진은 가로세로 4:3 으로 잘려 표시됩니다. 원본 비율은 유지되지 않습니다.
+       · 용량이 크면 페이지가 느려집니다. 긴 변 1600px 이하를 권합니다.
+  -->
+  <section class="section section--tint" id="photos">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-camera"/></svg>
+      <h2 class="shead__title" data-en="Photos" data-ko="사진">Photos</h2>
+      <p class="shead__sub" data-en="Life in the lab." data-ko="연구실의 순간들.">Life in the lab.</p>
+    </div>
+
+    <div class="photos" id="photoGrid">
+      <!-- 여기부터 사진 목록 -->
+
+      <p class="empty-note" id="photoEmpty"
+         data-en="No photos yet — add images to assets/ and copy a figure block here."
+         data-ko="아직 등록된 사진이 없습니다. assets/ 에 사진을 올리고 figure 블록을 추가하세요.">
+         No photos yet — add images to assets/ and copy a figure block here.</p>
+
+      <!-- 여기까지 사진 목록 -->
+    </div>
+  </section>
+
+  <!-- ============ JOIN ============ -->
+  <section class="section" id="join">
+    <div class="join">
+      <svg class="join__ic"><use href="#i-users"/></svg>
+      <h2 class="join__title" data-en="Join us." data-ko="함께해요.">Join us.</h2>
+      <p class="join__lead"
+         data-en="We are looking for curious graduate students, postdocs, and research technicians interested in cell biology, single-cell genomics, and RNA-guided therapeutics."
+         data-ko="세포생물학, 단일세포 유전체, RNA 기반 치료에 관심 있는 호기심 많은 대학원생·박사후연구원·연구원을 찾습니다.">
+         We are looking for curious graduate students, postdocs, and research technicians interested in cell biology, single-cell genomics, and RNA-guided therapeutics.</p>
+      <a href="mailto:yoohyungk@gmail.com" class="btn btn--light"><svg class="ic"><use href="#i-envelope"/></svg><span data-en="Get in touch" data-ko="문의하기">Get in touch</span></a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__lab">PRISM Group</p>
+        <p class="footer__aff"
+           data-en="Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS)"
+           data-ko="Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS)">
+           Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS)</p>
+        <p class="footer__aff"
+           data-en="Division of Endocrinology &amp; Metabolism, Seoul National University Hospital"
+           data-ko="서울대학교병원 내분비대사내과">
+           Division of Endocrinology &amp; Metabolism, Seoul National University Hospital</p>
+        <p class="footer__aff" data-en="Seoul, Republic of Korea" data-ko="대한민국 서울">Seoul, Republic of Korea</p>
+      </div>
+      <div class="footer__right">
+        <div class="socials">
+          <a class="soc" href="mailto:yoohyungk@gmail.com" aria-label="Email"><svg class="ic"><use href="#i-envelope"/></svg></a>
+          <a class="soc" href="https://orcid.org/0000-0002-5923-4915" target="_blank" rel="noopener" aria-label="ORCID"><svg class="ic"><use href="#i-orcid"/></svg></a>
+        </div>
+        <p class="footer__copy">© <span id="year"></span> PRISM Group</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=e0d37376"></script>
+</body>
+</html>

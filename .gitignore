@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Claude Code 로컬 설정
+.claude/
+
+# 개인 문서 — 절대 공개 금지
+# biosketch 에는 연구비 금액, percent effort, 경력 상세가 들어 있습니다.
+*.docx
+~$*
+
+# 작업 중 만든 백업본 (로컬에만 보관)
+*_v1.*
+
+# 작업 노트 (저장소에는 올리지 않음)
+NEXT_STEPS.md

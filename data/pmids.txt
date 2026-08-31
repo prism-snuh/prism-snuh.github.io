@@ -1,0 +1,44 @@
+# PRISM Group — 논문 PMID 시드 목록
+# biosketch 기준, PubMed 대조 완료 (2026-08-31)
+# 한 줄에 PMID 하나. '#'로 시작하면 주석.
+# 새 논문은 여기에 PMID만 추가하면 됩니다.
+
+# --- 1. Cancer metabolism and biology ---
+41728981   # Int J Surg 2026 — Integrative multi-omics refines molecular subtypes of thyroid cancers
+41589080   # J Korean Med Sci 2026 — MAeSTro-SDM protocol
+40087165   # Eur Arch Otorhinolaryngol 2025 — Anaplastic/poorly differentiated TC at intervention sites
+39962344   # Endocrinol Metab 2025 — MAeSTro-EXP protocol
+39397516   # Endocrinol Metab 2024 — Small multi-gene DNA panel
+38798239   # Endocrinol Metab 2024 — Diagnostic accuracy of preoperative radiologic findings in PTMC
+38088902   # Clin Cancer Res 2024 — Integrative multi-omics: metabolic phenotypes in thyroid cancer
+37545523   # Front Immunol 2023 — Orthotopic ATC model in C57BL/6 mice
+35413780   # Endocrinol Metab 2022 — Transarterial radioembolization for liver metastasis
+30733421   # Science 2019 — Tumor metastasis to lymph nodes requires YAP-dependent metabolic adaptation
+
+# --- 2. Vascular biology ---
+35687678   # Sci Adv 2022 — NF2/Merlin gatekeeping in vascular tip EC induction
+31981984   # EBioMedicine 2020 — Thrombospondin-1 in Fabry disease iPSC-derived EC
+30783090   # Nat Commun 2019 — MST1-FOXO1 cascade, endothelial tip cell polarity
+30295643   # J Clin Invest 2018 — Angiopoietin-2 in cardiac hypoxia after MI
+28805663   # J Clin Invest 2017 — YAP/TAZ in sprouting angiogenesis (co-first author)
+
+# --- 3. Endocrinology ---
+40930058   # J Med Internet Res 2025 — Biological age estimation (deep learning)
+39576146   # J Diabetes Investig 2025 — AI body composition analysis predicts diabetes
+38171208   # Endocrinol Metab 2024 — Preoperative copeptin predicts delayed hyponatremia
+34650185   # Sci Rep 2021 — Computer-aided diagnosis for thyroid nodule ultrasound
+34446748   # Sci Rep 2021 — Copeptin before/after transsphenoidal surgery
+34122338   # Front Endocrinol 2021 — Decreased ileal thyroid hormone transporters
+
+# --- 4. Other clinical studies ---
+28869715   # Intern Med J 2017 — GDF15 predicts renal outcomes in IgA nephropathy
+28362702   # Appl Immunohistochem Mol Morphol 2018 — PLA2R and IgG4 in membranous nephropathy
+27346188   # Intern Med J 2016 — Spinning-induced rhabdomyolysis
+27222015   # Nephron 2016 — Overhydration in idiopathic edema
+27074671   # Korean J Intern Med 2016 — Tunneled hemodialysis catheter placement delay
+26779424   # Kidney Res Clin Pract 2015 — Overhydration by bioimpedance and survival
+26306306   # Chonnam Med J 2015 — Membranous GN with superimposed ANCA-associated RPGN
+26877926   # Kidney Res Clin Pract 2013 — Nondiabetic kidney diseases in type 2 diabetes
+42458477   # 검토 후 편입 (2026-08-31)
+42219240   # 검토 후 편입 (2026-08-31)
+36322283   # 검토 후 편입 (2026-08-31)
