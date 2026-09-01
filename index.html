@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=07df4e31" />
+  <link rel="stylesheet" href="css/style.css?v=43afee18" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
 </head>
 <body>
@@ -54,6 +54,7 @@
         <a href="#team" data-en="Team" data-ko="구성원">Team</a>
         <a href="#column" data-en="Column" data-ko="칼럼">Column</a>
         <a href="#photos" data-en="Photos" data-ko="사진">Photos</a>
+        <a href="#code" data-en="Code" data-ko="코드">Code</a>
         <a href="#join" data-en="Join" data-ko="합류">Join</a>
         <button class="lang-switch" id="langSwitch" aria-label="Language">
           <span class="lang-switch__opt" data-lang="en">EN</span>
@@ -717,8 +718,52 @@
     </div>
   </section>
 
+  <!-- ============ CODE ============ -->
+  <!--
+       코드를 추가하는 방법
+       1. 논문마다 별도 저장소를 만듭니다.
+          예) https://github.com/prism-snuh/thyroid-multiomics-2026
+       2. 저널이 영구 식별자(DOI)를 요구하면 Zenodo 에 그 저장소를 연결하고 릴리스를 만듭니다.
+          릴리스마다 DOI 가 자동 발급됩니다. GitHub 주소만으로는 반려되는 저널이 있습니다.
+       3. 아래 article 블록을 복사해 "여기부터 코드 목록" 아래에 붙여넣습니다.
+       4. 하나라도 등록되면 "아직 등록된 코드가 없습니다" 안내는 자동으로 사라집니다.
+       5. DOI 가 아직 없으면 DOI 줄을 지우면 됩니다. 태그도 필요 없으면 지우세요.
+
+       <article class="pcard">
+         <div class="pcard__thumb" style="--h1:#1f4a5e;--h2:#3f8fbf">2026</div>
+         <div class="pcard__body">
+           <h3 class="pcard__title">thyroid-multiomics-2026</h3>
+           <p class="pcard__desc">scRNA-seq 전처리부터 클러스터링·궤적 분석까지의 파이프라인.</p>
+           <p class="pcard__paper">Joo EH, et al. Mol Cancer 2026</p>
+           <p class="pcard__venue"><span class="tag">Python</span><span class="tag">MIT</span></p>
+           <div class="pcard__actions">
+             <a class="pill" href="https://github.com/prism-snuh/저장소이름" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>GitHub</a>
+             <a class="pill" href="https://doi.org/10.5281/zenodo.0000000" target="_blank" rel="noopener"><svg class="ic"><use href="#i-link"/></svg>DOI</a>
+           </div>
+         </div>
+       </article>
+  -->
+  <section class="section" id="code">
+    <div class="shead">
+      <svg class="shead__ic"><use href="#i-github"/></svg>
+      <h2 class="shead__title" data-en="Code" data-ko="코드">Code</h2>
+      <p class="shead__sub" data-en="Analysis code released alongside our papers."
+         data-ko="논문과 함께 공개하는 분석 코드.">Analysis code released alongside our papers.</p>
+    </div>
+
+    <div class="codes" id="codeList">
+      <!-- 여기부터 코드 목록 -->
+
+      <p class="empty-note" id="codeEmpty"
+         data-en="No code released yet."
+         data-ko="아직 등록된 코드가 없습니다.">No code released yet.</p>
+
+      <!-- 여기까지 코드 목록 -->
+    </div>
+  </section>
+
   <!-- ============ JOIN ============ -->
-  <section class="section" id="join">
+  <section class="section section--tint" id="join">
     <div class="join">
       <svg class="join__ic"><use href="#i-users"/></svg>
       <h2 class="join__title" data-en="Join us." data-ko="함께해요.">Join us.</h2>
@@ -756,6 +801,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=e47807f6"></script>
+  <script src="js/main.js?v=0daae41d"></script>
 </body>
 </html>

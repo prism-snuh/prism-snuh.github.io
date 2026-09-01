@@ -213,6 +213,11 @@ body {
 .pcard__authors { color: var(--ink-soft); font-size: 0.92rem; margin-top: 0.3rem; }
 .pcard__authors strong { color: var(--teal-700); }
 .pcard__venue { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
+
+/* 코드 섹션 — 논문 카드(.pcard) 스타일을 그대로 재사용합니다 */
+.codes { display: grid; gap: 1rem; }
+.pcard__desc  { color: var(--ink-soft); font-size: 0.96rem; margin-top: 0.4rem; line-height: 1.7; }
+.pcard__paper { color: var(--ink-soft); font-size: 0.88rem; margin-top: 0.45rem; font-style: italic; }
 .pcard__actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem; }
 
 /* 목록 접기/펼치기 — 논문·소식 공통 */

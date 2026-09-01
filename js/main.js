@@ -126,7 +126,8 @@
   function initEmptyStates() {
     [
       { listId: "photoGrid", emptyId: "photoEmpty", itemSelector: ".photo" },
-      { listId: "newsList", emptyId: "newsEmpty", itemSelector: ".news__item" }
+      { listId: "newsList", emptyId: "newsEmpty", itemSelector: ".news__item" },
+      { listId: "codeList", emptyId: "codeEmpty", itemSelector: ".pcard" }
     ].forEach(function (o) {
       var list = document.getElementById(o.listId);
       var empty = document.getElementById(o.emptyId);
