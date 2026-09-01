@@ -161,9 +161,36 @@
       <!-- 소식을 추가하려면 이 블록을 복사해 맨 위에 붙여넣으세요. 최신 소식이 위로 갑니다.
            <li class="news__item">
              <time class="news__badge">2026 · 09</time>
-             <p class="news__text">소식 내용.</p>
+             <p class="news__text" data-en="English sentence." data-ko="한국어 문장.">English sentence.</p>
            </li>
+
+           · data-en / data-ko 를 넣으면 언어 스위치에 따라 바뀝니다.
+             한쪽 언어로만 쓰실 거면 두 속성 없이 문장만 넣으셔도 됩니다.
       -->
+
+      <li class="news__item">
+        <time class="news__badge">2026 · 08</time>
+        <p class="news__text"
+           data-en="Kyuri Kim received the Best Oral Presentation Award at the Fall Meeting of the Korean Thyroid Association."
+           data-ko="김규리 학생이 대한갑상선학회 추계학술대회에서 우수구연상을 수상했습니다.">
+           Kyuri Kim received the Best Oral Presentation Award at the Fall Meeting of the Korean Thyroid Association.</p>
+      </li>
+
+      <li class="news__item">
+        <time class="news__badge">2026 · 06</time>
+        <p class="news__text"
+           data-en="Suk Joon Nam received the Best Presentation Award at SSBH."
+           data-ko="남석준 학생이 SSBH에서 우수연제상을 수상했습니다.">
+           Suk Joon Nam received the Best Presentation Award at SSBH.</p>
+      </li>
+
+      <li class="news__item">
+        <time class="news__badge">2026 · 03</time>
+        <p class="news__text"
+           data-en="Hankook Ryu received the Best Presentation Award at the Spring Meeting of the Korean Thyroid Association."
+           data-ko="류한국 학생이 대한갑상선학회 춘계학술대회에서 우수연제상을 수상했습니다.">
+           Hankook Ryu received the Best Presentation Award at the Spring Meeting of the Korean Thyroid Association.</p>
+      </li>
 
       <li class="empty-note" id="newsEmpty"
           data-en="No news yet." data-ko="아직 등록된 소식이 없습니다.">No news yet.</li>
