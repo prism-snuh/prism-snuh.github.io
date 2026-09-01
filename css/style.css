@@ -325,6 +325,20 @@ body {
 .join .btn--light { background: #fff; color: var(--teal-800); border-color: #fff; }
 .join .btn--light:hover { background: #eeeff2; }
 
+.join__mail {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  margin: 0.2rem 0 0.6rem;
+  padding: 0.72rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1.02rem;
+  user-select: all;            /* 한 번 클릭으로 주소 전체 선택 */
+}
+.join__mail .ic { width: 1.05rem; height: 1.05rem; color: var(--emerald-lt); flex: none; }
+.join__mailnote { font-size: 0.86rem; color: #a9acba; }
+
 /* ============================================================
    FOOTER
    ============================================================ */

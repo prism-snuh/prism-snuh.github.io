@@ -31,11 +31,8 @@
   function initLang() {
     var saved = null;
     try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-    if (!saved) {
-      var nav = (navigator.language || "en").toLowerCase();
-      saved = nav.indexOf("ko") === 0 ? "ko" : "en";
-    }
-    applyLang(saved);
+    // 기본은 항상 영어. 방문자가 스위치로 한국어를 고른 경우에만 그 선택을 기억합니다.
+    applyLang(saved === "ko" ? "ko" : "en");
 
     var sw = document.getElementById("langSwitch");
     if (sw) {
