@@ -250,6 +250,48 @@ body {
 .photo:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--emerald-lt); }
 .photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--tint); }
 .photo figcaption { padding: 0.75rem 0.9rem; font-size: 0.9rem; color: var(--ink-soft); line-height: 1.5; }
+
+/* ---------- 사진 확대 (라이트박스) ---------- */
+/* 사진을 클릭하면 원본 비율 그대로 크게 봅니다. Esc·바깥 클릭으로 닫고, ← → 로 넘깁니다.
+   마크업은 js/main.js 의 initLightbox() 가 만들어 붙입니다. index.html 에는 없습니다. */
+.photo { cursor: zoom-in; }
+.photo:focus-visible { outline: 2px solid var(--emerald); outline-offset: 3px; }
+
+.lb {
+  position: fixed; inset: 0; z-index: 999;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.9rem; padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(6, 26, 32, 0.97);
+  opacity: 0; visibility: hidden; transition: opacity 0.2s ease;
+}
+.lb.is-open { opacity: 1; visibility: visible; }
+.lb__img {
+  max-width: min(1100px, 92vw); max-height: 76vh;
+  width: auto; height: auto; object-fit: contain;
+  border-radius: 6px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); background: #0b2027;
+}
+.lb__cap { max-width: min(760px, 90vw); margin: 0; text-align: center; color: #dff0ee; font-size: 0.95rem; line-height: 1.6; }
+.lb__count { margin: 0; color: #7fb3ad; font-size: 0.78rem; letter-spacing: 0.1em; }
+.lb__btn {
+  position: absolute; padding: 0.55rem; line-height: 0;
+  background: none; border: 0; border-radius: 999px; color: #cfe6e3; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.lb__btn:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.lb__btn:focus-visible { outline: 2px solid var(--emerald); outline-offset: 2px; }
+.lb__btn svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lb__close { top: clamp(0.75rem, 2vw, 1.5rem); right: clamp(0.75rem, 2vw, 1.5rem); }
+.lb__prev { left: clamp(0.25rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); }
+.lb__next { right: clamp(0.25rem, 2vw, 2rem); top: 50%; transform: translateY(-50%); }
+body.lb-open { overflow: hidden; }
+
+@media (max-width: 640px) {
+  .lb__img { max-height: 62vh; }
+  .lb__btn svg { width: 22px; height: 22px; }
+  /* 좁은 화면에서는 화살표가 사진 위에 얹히므로 배경을 깔아 대비를 확보합니다. */
+  .lb__prev, .lb__next { background: rgba(6, 26, 32, 0.62); }
+}
+@media (prefers-reduced-motion: reduce) { .lb { transition: none; } }
 /* 항목이 아직 없을 때 보여주는 안내 (사진 · 소식 공용) */
 .empty-note {
   grid-column: 1 / -1; text-align: center; color: var(--ink-soft); list-style: none;

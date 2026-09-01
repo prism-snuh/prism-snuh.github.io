@@ -136,6 +136,126 @@
     });
   }
 
+  /* ---------- 사진 확대 (라이트박스) ---------- */
+  /* 사진을 클릭하면 원본을 크게 보여 줍니다.
+     · 닫기: 바깥 클릭 · Esc · 오른쪽 위 X
+     · 넘기기: 좌우 화살표 버튼 · 키보드 ← →
+     사진을 추가할 때 따로 손댈 것은 없습니다. figure 블록만 넣으면 자동으로 잡힙니다. */
+  function initLightbox() {
+    var figs = [].slice.call(document.querySelectorAll("#photoGrid .photo"));
+    if (!figs.length) return;
+
+    var SVG = {
+      close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+      prev:  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+      next:  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>'
+    };
+
+    var box = document.createElement("div");
+    box.className = "lb";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Photo viewer");
+    box.innerHTML =
+      '<button class="lb__btn lb__close" type="button" aria-label="Close">' + SVG.close + "</button>" +
+      '<button class="lb__btn lb__prev" type="button" aria-label="Previous photo">' + SVG.prev + "</button>" +
+      '<button class="lb__btn lb__next" type="button" aria-label="Next photo">' + SVG.next + "</button>" +
+      '<img class="lb__img" alt="">' +
+      '<p class="lb__cap"></p>' +
+      '<p class="lb__count"></p>';
+    document.body.appendChild(box);
+
+    var img     = box.querySelector(".lb__img");
+    var capEl   = box.querySelector(".lb__cap");
+    var countEl = box.querySelector(".lb__count");
+    var btnClose = box.querySelector(".lb__close");
+    var btnPrev  = box.querySelector(".lb__prev");
+    var btnNext  = box.querySelector(".lb__next");
+    var idx = 0;
+    var lastFocus = null;
+
+    // 사진이 하나뿐이면 좌우 버튼은 의미가 없습니다.
+    if (figs.length < 2) {
+      btnPrev.style.display = "none";
+      btnNext.style.display = "none";
+    }
+
+    function show(i) {
+      idx = (i + figs.length) % figs.length;
+      var fig = figs[idx];
+      var src = fig.querySelector("img");
+      var cap = fig.querySelector("figcaption");
+
+      img.setAttribute("src", src.getAttribute("src"));
+      img.setAttribute("alt", src.getAttribute("alt") || "");
+
+      // 캡션의 data-en / data-ko 를 그대로 물려받아, 언어 스위치가 라이트박스에도 먹게 합니다.
+      capEl.removeAttribute("data-en");
+      capEl.removeAttribute("data-ko");
+      if (cap) {
+        var en = cap.getAttribute("data-en");
+        var ko = cap.getAttribute("data-ko");
+        if (en !== null && ko !== null) {
+          capEl.setAttribute("data-en", en);
+          capEl.setAttribute("data-ko", ko);
+        }
+        capEl.innerHTML = cap.innerHTML;
+      } else {
+        capEl.textContent = "";
+      }
+
+      countEl.textContent = figs.length > 1 ? (idx + 1) + " / " + figs.length : "";
+    }
+
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      box.classList.add("is-open");
+      document.body.classList.add("lb-open");
+      btnClose.focus();
+    }
+
+    function close() {
+      box.classList.remove("is-open");
+      document.body.classList.remove("lb-open");
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function isOpen() { return box.classList.contains("is-open"); }
+
+    figs.forEach(function (fig, i) {
+      var cap = fig.querySelector("figcaption");
+      fig.setAttribute("tabindex", "0");
+      fig.setAttribute("role", "button");
+      fig.setAttribute("aria-label", (cap ? cap.textContent.trim() + " — " : "") + "Enlarge");
+      fig.addEventListener("click", function () { open(i); });
+      fig.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+          e.preventDefault();
+          open(i);
+        }
+      });
+    });
+
+    btnClose.addEventListener("click", close);
+    btnPrev.addEventListener("click", function (e) { e.stopPropagation(); show(idx - 1); });
+    btnNext.addEventListener("click", function (e) { e.stopPropagation(); show(idx + 1); });
+    // 사진·버튼이 아닌 배경을 눌렀을 때만 닫습니다.
+    box.addEventListener("click", function (e) { if (e.target === box) close(); });
+
+    document.addEventListener("keydown", function (e) {
+      if (!isOpen()) return;
+      if (e.key === "Escape") { close(); }
+      else if (e.key === "ArrowLeft" && figs.length > 1) { show(idx - 1); }
+      else if (e.key === "ArrowRight" && figs.length > 1) { show(idx + 1); }
+    });
+
+    // 열려 있는 동안 초점이 뒤 페이지로 새어 나가지 않게 합니다.
+    document.addEventListener("focusin", function (e) {
+      if (isOpen() && !box.contains(e.target)) btnClose.focus();
+    });
+  }
+
   /* ---------- 비어 있는 섹션 감추기 ---------- */
   /* 항목이 하나도 없는 섹션은 본문과 상단 메뉴 링크를 함께 감춥니다.
      첫 항목을 넣는 순간 자동으로 다시 나타납니다. 손댈 것이 없습니다.
@@ -164,6 +284,7 @@
     initCollapse();
     initEmptyStates();
     initHideEmptySections();
+    initLightbox();
     initLang();
     initYear();
   });
