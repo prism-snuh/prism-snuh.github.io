@@ -148,7 +148,20 @@ PY
 
 `data/publications.json` 만 바뀐 커밋은 workflow가 자동으로 만든다. 사람이 흉내내지 않는다.
 
-## 9. 이 채팅방(Cowork)의 제약
+## 9. 작업 기기 — MacBook Air 전용
+
+이 저장소는 **MacBook Air 한 대에서만** 다룬다. Cowork 세션도 Air에 연결해서 쓴다.
+
+폴더가 Google Drive 안에 있어(`~/Library/CloudStorage/GoogleDrive-.../claude/code/project/labpage`)
+여러 기기에서 같은 `.git` 을 건드리면 Drive 동기화가 반쪽만 내려온 상태에서 저장소가 깨진다.
+실제로 MacBook Pro에서 `git push` 하다 `src refspec refs/heads/main does not match any`
+(로컬에 main 브랜치가 없음 = `.git/refs/heads/main` 이 클라우드 자리표시자 상태)가 났다.
+
+- **다른 맥에서는 이 폴더의 git 명령을 실행하지 않는다.**
+- Drive 스트리밍 탓에 파일 읽기가 `Resource deadlock avoided` 로 실패할 수 있다(예: `NEXT_STEPS.md`).
+  그때는 파일 내용을 교수님께 직접 여쭙는다.
+
+## 10. 이 채팅방(Cowork)의 제약
 
 - **`git push` 를 할 수 없다.** `device_bash` 는 맥 위의 격리된 리눅스 VM이라 macOS 키체인의
   GitHub 자격증명에 접근하지 못한다 (`could not read Username for 'https://github.com'`).
