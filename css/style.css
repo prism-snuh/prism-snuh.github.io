@@ -326,8 +326,10 @@ body.lb-open { overflow: hidden; }
 .pi__portrait {
   flex: none; width: 104px; height: 104px; border-radius: 50%;
   display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 1.6rem; letter-spacing: 0.02em;
+  /* 사진이 없을 때를 위한 바탕. <img class="pi__portrait"> 를 쓰면 사진이 덮습니다. */
   background: linear-gradient(135deg, var(--teal-800), var(--emerald));
   box-shadow: 0 0 0 5px var(--tint);
+  object-fit: cover; object-position: center;
 }
 .pi__name { font-size: 1.5rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
 .pi__bio { color: var(--ink-soft); max-width: 640px; margin: 0.8rem 0 0.9rem; }

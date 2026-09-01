@@ -75,7 +75,7 @@ python3 -m http.server 8000
 | Publications | **실제 논문 32편.** biosketch를 PubMed와 전수 대조해 확정했습니다. `scripts/fetch_publications.py`가 자동 생성하며, PubMed·DOI·PMC 링크가 모두 실제 URL입니다. |
 | News (4건) | **placeholder — 전부 허구입니다.** 실제 소식으로 교체하거나 섹션을 삭제해 주세요. |
 | Team (PI 외) | **placeholder.** 박사후연구원·대학원생 카드는 예시입니다. |
-| 소셜 링크 | ORCID만 실제 연결. Google Scholar·GitHub은 `href="#"` 상태입니다. |
+| 소셜 링크 | ORCID만 연결합니다. **Google Scholar는 의도적으로 넣지 않습니다**(논문을 온전히 수집하지 못해 사용하지 않음). |
 
 ## 사진 올리기
 
