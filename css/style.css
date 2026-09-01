@@ -163,7 +163,7 @@ body {
    ============================================================ */
 .grid { display: grid; gap: 1.2rem; }
 .grid--research { grid-template-columns: repeat(2, 1fr); }
-.grid--team { grid-template-columns: repeat(4, 1fr); margin-top: 2rem; }
+.grid--team { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin-top: 2rem; }
 
 .rcard {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
@@ -302,6 +302,7 @@ body {
   border: 1px solid var(--line); box-shadow: 0 0 0 5px var(--tint);
 }
 .mcard__name { font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+.mcard .tags { justify-content: center; }
 
 /* socials */
 .socials { display: flex; gap: 0.55rem; }

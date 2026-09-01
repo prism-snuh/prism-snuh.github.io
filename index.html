@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=43afee18" />
+  <link rel="stylesheet" href="css/style.css?v=59fa88df" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
 </head>
 <body>
@@ -171,9 +171,17 @@
       <li class="news__item">
         <time class="news__badge">2026 · 08</time>
         <p class="news__text"
-           data-en="Kyuri Kim received the Best Oral Presentation Award at the Fall Meeting of the Korean Thyroid Association."
+           data-en="Yoo Hyung Kim received the Basic Medical Science Research Award at the Fall Meeting of the Korean Thyroid Association."
+           data-ko="김유형 교수가 대한갑상선학회 추계학술대회에서 기초의학연구상을 수상했습니다.">
+           Yoo Hyung Kim received the Basic Medical Science Research Award at the Fall Meeting of the Korean Thyroid Association.</p>
+      </li>
+
+      <li class="news__item">
+        <time class="news__badge">2026 · 08</time>
+        <p class="news__text"
+           data-en="Kyu Ri Kim received the Best Oral Presentation Award at the Fall Meeting of the Korean Thyroid Association."
            data-ko="김규리 학생이 대한갑상선학회 추계학술대회에서 우수구연상을 수상했습니다.">
-           Kyuri Kim received the Best Oral Presentation Award at the Fall Meeting of the Korean Thyroid Association.</p>
+           Kyu Ri Kim received the Best Oral Presentation Award at the Fall Meeting of the Korean Thyroid Association.</p>
       </li>
 
       <li class="news__item">
@@ -653,21 +661,50 @@
       </div>
     </article>
 
-    <!-- 구성원을 추가하려면 아래 주석을 풀고 grid 안에 mcard 블록을 넣으세요.
+    <!-- 구성원을 추가하려면 아래 mcard 블록을 복사해 grid 안에 붙여넣으세요.
          공개 동의를 받은 분만 올려 주세요.
+         · data-en 은 영문 표기, data-ko 는 한글 이름입니다. 본인이 쓰는 표기를 따르세요.
+         · 연구 주제 태그는 개수 제한이 없습니다. 없으면 tags 줄을 지우면 됩니다.
+         · 사진을 넣으려면 mcard__portrait 를 아래처럼 바꾸세요.
+           <img class="mcard__portrait" src="assets/파일명.jpg" alt="이름" loading="lazy">
+    -->
 
     <div class="grid grid--team">
       <article class="mcard">
         <div class="mcard__portrait" aria-hidden="true"></div>
-        <h4 class="mcard__name">홍길동</h4>
-        <span class="tag tag--role">대학원생</span>
-        <span class="tag">연구 주제</span>
-        <div class="socials socials--sm">
-          <a class="soc" href="mailto:주소" aria-label="Email"><svg class="ic"><use href="#i-envelope"/></svg></a>
-        </div>
+        <h4 class="mcard__name" data-en="Han Guk Ryu" data-ko="류한국">Han Guk Ryu</h4>
+        <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
+        <div class="tags"><span class="tag">Aging</span><span class="tag">ncRNA</span></div>
+      </article>
+
+      <article class="mcard">
+        <div class="mcard__portrait" aria-hidden="true"></div>
+        <h4 class="mcard__name" data-en="Suk Joon Nam" data-ko="남석준">Suk Joon Nam</h4>
+        <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
+        <div class="tags"><span class="tag">EC heterogeneity</span></div>
+      </article>
+
+      <article class="mcard">
+        <div class="mcard__portrait" aria-hidden="true"></div>
+        <h4 class="mcard__name" data-en="Kyu Ri Kim" data-ko="김규리">Kyu Ri Kim</h4>
+        <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
+        <div class="tags"><span class="tag">Cancer Metabolism</span></div>
+      </article>
+
+      <article class="mcard">
+        <div class="mcard__portrait" aria-hidden="true"></div>
+        <h4 class="mcard__name" data-en="Dong Hwa Choi" data-ko="최동화">Dong Hwa Choi</h4>
+        <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
+        <div class="tags"><span class="tag">EC heterogeneity</span><span class="tag">Lung Metastasis</span></div>
+      </article>
+
+      <article class="mcard">
+        <div class="mcard__portrait" aria-hidden="true"></div>
+        <h4 class="mcard__name" data-en="Min Jung Jo" data-ko="조민정">Min Jung Jo</h4>
+        <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
+        <div class="tags"><span class="tag">Lung Metastasis</span><span class="tag">Aging</span></div>
       </article>
     </div>
-    -->
   </section>
 
   <!-- ============ COLUMN ============ -->
