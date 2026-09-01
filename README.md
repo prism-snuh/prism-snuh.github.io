@@ -1,6 +1,6 @@
 # PRISM Group — Homepage
 
-**PRISM Group** — Plasticity, RNA, Identity, Single-cell and Modulation.
+**PRISM Group** — Plasticity, RNA, Identity, Senescence and Modulation.
 Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS) 소속 연구그룹 (PI: 김유형)의 홈페이지.
 정적 사이트(HTML/CSS/JS)로, GitHub Pages에 그대로 배포할 수 있습니다.
 
