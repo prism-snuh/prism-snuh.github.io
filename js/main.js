@@ -136,6 +136,22 @@
     });
   }
 
+  /* ---------- 비어 있는 섹션 감추기 ---------- */
+  /* 항목이 하나도 없는 섹션은 본문과 상단 메뉴 링크를 함께 감춥니다.
+     첫 항목을 넣는 순간 자동으로 다시 나타납니다. 손댈 것이 없습니다.
+     다시 항상 보이게 하려면 아래 배열에서 해당 줄만 지우면 됩니다. */
+  function initHideEmptySections() {
+    [
+      { sectionId: "code", itemSelector: ".pcard" }
+    ].forEach(function (o) {
+      var sec = document.getElementById(o.sectionId);
+      if (!sec || sec.querySelector(o.itemSelector)) return;
+      sec.style.display = "none";
+      var link = document.querySelector('.nav__links a[href="#' + o.sectionId + '"]');
+      if (link) link.style.display = "none";
+    });
+  }
+
   /* ---------- Footer year ---------- */
   function initYear() {
     var y = document.getElementById("year");
@@ -147,6 +163,7 @@
     initNav();
     initCollapse();
     initEmptyStates();
+    initHideEmptySections();
     initLang();
     initYear();
   });

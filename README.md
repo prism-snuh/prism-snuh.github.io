@@ -4,6 +4,8 @@
 Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS) 소속 연구그룹 (PI: 김유형)의 홈페이지.
 정적 사이트(HTML/CSS/JS)로, GitHub Pages에 그대로 배포할 수 있습니다.
 
+> 이 저장소를 Claude(Cowork·Claude Code)로 관리할 때의 규칙은 **`CLAUDE.md`** 에 있습니다.
+
 ## 구성
 
 ```
@@ -127,6 +129,12 @@ News는 손으로 편집하는 영역이라 **`<li>` 를 추가하기만 하면 
 GitHub 웹 편집기(저장소 → `index.html` → 연필 아이콘 → Commit)로 바로 수정할 수 있고,
 커밋하면 GitHub Pages에 1분 내 반영됩니다. 이 영역은 논문 자동 갱신이 건드리지 않습니다.
 
+## Code 섹션
+
+등록된 코드가 하나도 없으면 Code 섹션과 상단 메뉴의 Code 링크가 **자동으로 숨겨집니다.**
+`<!-- 여기부터 코드 목록 -->` 아래에 첫 `pcard` 블록을 넣는 순간 다시 나타납니다. 손댈 것이 없습니다.
+항상 보이게 하려면 `js/main.js` 의 `initHideEmptySections()` 안 배열에서 `code` 줄을 지우세요.
+
 ## 논문 목록 관리
 
 논문 목록은 **index.html을 직접 수정하지 않습니다.** `scripts/fetch_publications.py`가
@@ -134,8 +142,8 @@ GitHub 웹 편집기(저장소 → `index.html` → 연필 아이콘 → Commit)
 
 ### 표시 방식
 
-최근 **10편**만 바로 보이고 나머지는 "Show N more papers" 버튼으로 접힙니다.
-편수는 `scripts/fetch_publications.py` 상단의 `VISIBLE` 상수로 바꿉니다.
+최근 **5편**만 바로 보이고 나머지는 "Show N more papers" 버튼으로 접힙니다.
+편수는 `scripts/fetch_publications.py` 상단의 `VISIBLE` 상수와 `js/main.js` 의 `initCollapse()` 안 `limit` 을 **함께** 바꿉니다.
 접힌 카드도 HTML에는 그대로 들어 있어 검색엔진에는 전부 노출됩니다.
 
 ### 세 개의 출처
