@@ -127,6 +127,10 @@ PY
 6. **`git push` 는 교수님이 맥 터미널에서 직접 실행한다.** 아래 9장 참고
 7. 1분쯤 뒤 https://prism-snuh.github.io/ 에서 반영 확인
 
+> **논문 목록은 예외.** `data/publications.json` 과 `index.html` 의 PUBLICATIONS 구간은
+> GitHub Actions가 GitHub 서버에서 직접 커밋하고 push한다 (`permissions: contents: write`).
+> 사람의 push가 전혀 필요 없다. 위 절차는 **손으로 고치는 영역**(소식·구성원·사진·칼럼·코드·설정)에만 적용된다.
+
 ### 커밋 메시지
 
 한국어 한 줄, 접두어를 붙인다. 본문은 필요할 때만.
@@ -145,6 +149,8 @@ PY
 
 - **`git push` 를 할 수 없다.** `device_bash` 는 맥 위의 격리된 리눅스 VM이라 macOS 키체인의
   GitHub 자격증명에 접근하지 못한다 (`could not read Username for 'https://github.com'`).
+  이것은 **이 채팅방에서 손으로 고친 변경분에만** 해당한다. GitHub Actions는 GitHub 서버에서 도므로
+  네트워크도 자격증명도 문제가 없고, 논문 갱신은 봇이 알아서 커밋·push한다.
   커밋까지만 하고, 교수님께 아래 한 줄을 안내한다.
   ```bash
   cd ~/Library/CloudStorage/GoogleDrive-yoohyungk@gmail.com/My\ Drive/claude/code/project/labpage && git push
