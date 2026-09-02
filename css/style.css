@@ -342,8 +342,10 @@ body.lb-open { overflow: hidden; }
 .mcard:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .mcard__portrait {
   width: 76px; height: 76px; border-radius: 50%;
+  /* 아바타가 없을 때를 위한 바탕. <img class="mcard__portrait"> 를 쓰면 그림이 덮습니다. */
   background: linear-gradient(135deg, var(--tint), var(--emerald-lt));
   border: 1px solid var(--line); box-shadow: 0 0 0 5px var(--tint);
+  object-fit: cover; object-position: center;
 }
 .mcard__name { font-size: 1.02rem; font-weight: 700; color: var(--ink); }
 .mcard .tags { justify-content: center; }

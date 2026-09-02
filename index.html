@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=45699693" />
+  <link rel="stylesheet" href="css/style.css?v=b7ff5878" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
 </head>
 <body>
@@ -666,41 +666,48 @@
          공개 동의를 받은 분만 올려 주세요.
          · data-en 은 영문 표기, data-ko 는 한글 이름입니다. 본인이 쓰는 표기를 따르세요.
          · 연구 주제 태그는 개수 제한이 없습니다. 없으면 tags 줄을 지우면 됩니다.
-         · 사진을 넣으려면 mcard__portrait 를 아래처럼 바꾸세요.
-           <img class="mcard__portrait" src="assets/파일명.jpg" alt="이름" loading="lazy">
+         · 아바타는 assets/avatar-<이름>.svg 입니다. 연구 주제를 그린 그림이며 사진이 아닙니다.
+           새 구성원은 기존 SVG 하나를 복사해 색과 모양만 바꾸면 됩니다.
+         · 실제 사진으로 바꾸려면 src 를 사진 파일로 교체하세요. 정사각 이미지를 권합니다.
+           <img class="mcard__portrait" src="assets/파일명.jpg" alt="이름" width="76" height="76" loading="lazy">
     -->
 
     <div class="grid grid--team">
       <article class="mcard">
-        <div class="mcard__portrait" aria-hidden="true"></div>
+        <img class="mcard__portrait" src="assets/avatar-han-guk-ryu.svg"
+             alt="Single-stranded RNA" width="76" height="76" loading="lazy">
         <h4 class="mcard__name" data-en="Han Guk Ryu" data-ko="류한국">Han Guk Ryu</h4>
         <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
         <div class="tags"><span class="tag">Aging</span><span class="tag">ncRNA</span></div>
       </article>
 
       <article class="mcard">
-        <div class="mcard__portrait" aria-hidden="true"></div>
+        <img class="mcard__portrait" src="assets/avatar-suk-joon-nam.svg"
+             alt="Branching blood vessel" width="76" height="76" loading="lazy">
         <h4 class="mcard__name" data-en="Suk Joon Nam" data-ko="남석준">Suk Joon Nam</h4>
         <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
         <div class="tags"><span class="tag">EC heterogeneity</span></div>
       </article>
 
       <article class="mcard">
-        <div class="mcard__portrait" aria-hidden="true"></div>
+        <img class="mcard__portrait" src="assets/avatar-kyu-ri-kim.svg"
+             alt="Mitochondrion" width="76" height="76" loading="lazy">
         <h4 class="mcard__name" data-en="Kyu Ri Kim" data-ko="김규리">Kyu Ri Kim</h4>
         <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
         <div class="tags"><span class="tag">Cancer Metabolism</span></div>
       </article>
 
       <article class="mcard">
-        <div class="mcard__portrait" aria-hidden="true"></div>
+        <img class="mcard__portrait" src="assets/avatar-dong-hwa-choi.svg"
+             alt="Lungs" width="76" height="76" loading="lazy">
         <h4 class="mcard__name" data-en="Dong Hwa Choi" data-ko="최동화">Dong Hwa Choi</h4>
         <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
         <div class="tags"><span class="tag">EC heterogeneity</span><span class="tag">Lung Metastasis</span></div>
       </article>
 
       <article class="mcard">
-        <div class="mcard__portrait" aria-hidden="true"></div>
+        <img class="mcard__portrait" src="assets/avatar-min-jung-jo.svg"
+             alt="Cell and surrounding cells" width="76" height="76" loading="lazy">
         <h4 class="mcard__name" data-en="Min Jung Jo" data-ko="조민정">Min Jung Jo</h4>
         <span class="tag tag--role" data-en="Graduate Student" data-ko="대학원생">Graduate Student</span>
         <div class="tags"><span class="tag">Lung Metastasis</span><span class="tag">Aging</span></div>

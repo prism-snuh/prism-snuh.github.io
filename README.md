@@ -11,7 +11,7 @@ Laboratory of Thyroid ImmunoMetabolism in SNUH (LTIMS) 소속 연구그룹 (PI: 
 ```
 labpage/
 ├── index.html                      # 단일 페이지 (Research / News / Publications / Team / Join)
-├── css/style.css                   # 딥 틸·에메랄드 테마
+├── css/style.css                   # 바이올렛 테마 (변수명은 --teal-*/--emerald 이지만 값은 바이올렛)
 ├── js/main.js                      # 언어 토글(EN/한) · 모바일 메뉴 · 연도
 ├── assets/                         # 이미지 등 (프로필 사진 넣는 곳)
 ├── data/
@@ -53,6 +53,7 @@ python3 -m http.server 8000
 
 ## 디자인 메모
 
+- 색은 바이올렛 계열(`--emerald: #6d5cf0`)입니다. 변수 **이름**은 초기 틸 테마의 것이 남아 있으니 값만 보고 판단하세요.
 - greenelab lab-website-template의 컴포넌트 감각(태그 pill, 가로형 논문 카드 + PubMed/DOI/Full text 버튼,
   원형 포트레이트 + 소셜 아이콘, 아이콘 섹션 헤더, 풀블리드 히어로 배너)을 반영했습니다.
 - 폰트는 greenelab 시그니처인 **Atkinson Hyperlegible**(+ 한글 Noto Sans KR).
@@ -73,8 +74,8 @@ python3 -m http.server 8000
 |---|---|
 | Research (4갈래) | 실제 연구 주제 |
 | Publications | **실제 논문 32편.** biosketch를 PubMed와 전수 대조해 확정했습니다. `scripts/fetch_publications.py`가 자동 생성하며, PubMed·DOI·PMC 링크가 모두 실제 URL입니다. |
-| News (4건) | **placeholder — 전부 허구입니다.** 실제 소식으로 교체하거나 섹션을 삭제해 주세요. |
-| Team (PI 외) | **placeholder.** 박사후연구원·대학원생 카드는 예시입니다. |
+| News | 실제 수상 소식 4건입니다. |
+| Team | PI 사진은 실물, 대학원생 5명은 **연구 주제를 그린 SVG 아바타**(`assets/avatar-*.svg`)입니다. |
 | 소셜 링크 | ORCID만 연결합니다. **Google Scholar는 의도적으로 넣지 않습니다**(논문을 온전히 수집하지 못해 사용하지 않음). |
 
 ## 사진 올리기
