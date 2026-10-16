@@ -101,6 +101,12 @@
 
 ## 5. 사진
 
+- **추가는 `scripts/add_photo.py` 로 한다.** 줄이기·EXIF 제거·이름 붙이기·figure 삽입·(선택) 커밋까지 한 번에 한다.
+  ```bash
+  python3 scripts/add_photo.py 사진1.jpg 사진2.HEIC --date 2026-10 --name ksmcb-poster \
+      --en "Poster session — ..., 2026" --ko "2026 ... 포스터 발표" --commit
+  ```
+  `--dry-run` 으로 미리 확인, `--alt` 로 영문 설명 지정. 실행 시 공개 동의 여부를 묻는다.
 - 파일은 `assets/` 에. 이름은 `YYYY-MM-설명.jpg` 형식 (예: `2026-08-kta-award-pi.jpg`).
 - **긴 변 1600px 이하**로 줄여서 올린다. 원본을 그대로 올리면 페이지가 느려진다.
 - 화면에는 **4:3 으로 잘려** 보인다. 인물이 가장자리에 있으면 잘린다.
